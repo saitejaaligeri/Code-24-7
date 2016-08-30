@@ -10,14 +10,11 @@ import org.springframework.stereotype.Component;
 @Table
 @Component
 
-
-public class Product {
-	
-	@Id
+public class Supplier {
+    @Id
 	private String id;
 	private String name;
-	private String description;
-	private int price;
+	private String address;
 	public String getId() {
 		return id;
 	}
@@ -30,21 +27,14 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getDescription() {
-		return description;
+	public String getAddress() {
+		return address;
 	}
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	
 	
 	
 	
-
 }
