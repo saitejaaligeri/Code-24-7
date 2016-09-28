@@ -10,11 +10,11 @@ import com.niit.ShoppingCart.Model.UserDetails;
 
 public interface UserDetailsDAO {
 
-     public boolean save(UserDetails userdetails);
+     public boolean save(UserDetails userDetails);
      
-     public boolean update(UserDetails userdetails);
+     public boolean update(UserDetails userDetails);
      
-     public boolean delete(UserDetails userdetails);
+     public boolean delete(UserDetails userDetails);
      
      public UserDetails get(String id);
      

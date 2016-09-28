@@ -2,9 +2,9 @@ package com.niit.ShoppingCart.Dao;
 
 import java.util.List;
 
-import javax.management.Query;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ShoppingCart.Model.Product;
+import com.niit.ShoppingCart.Model.Supplier;
 
 @EnableTransactionManagement
 @Repository("productDAO")
@@ -49,7 +50,7 @@ public class ProductDAOImpl implements ProductDAO{
 			return false;
 		}
     }
-    @Transactional
+   /* @Transactional
     public boolean delete(Product product){
     
             try {
@@ -60,15 +61,22 @@ public class ProductDAOImpl implements ProductDAO{
 				e.printStackTrace();
 				return false;
 			}
+    }*/
+    @Transactional
+    public void delete (int id) {
+    	Product ProductToDelete = new Product();
+    	ProductToDelete.setId(id);
+    	sessionFactory.getCurrentSession().delete(ProductToDelete);
+    	
     }
     
     @Transactional
-    public Product get(String id){
+    public Product get(int id){
     	
     	
     	String hql = "from Product where id = "+"'"+id+"'";
-    	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-    	List<Product> list = ((org.hibernate.Query) query).list();
+    	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+    	List<Product> list = query.list();
     	
     	if(list == null)
     	{
@@ -83,8 +91,8 @@ public class ProductDAOImpl implements ProductDAO{
     @Transactional
     public List<Product> list(){
     	String hql = "from Product";
-    	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-    	return ((org.hibernate.Query) query).list();
+    	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+    	return  query.list();
     	
     }
   

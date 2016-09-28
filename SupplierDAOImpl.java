@@ -2,9 +2,8 @@ package com.niit.ShoppingCart.Dao;
 
 import java.util.List;
 
-import javax.management.Query;
-
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.hql.internal.QueryExecutionRequestException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +35,10 @@ public class SupplierDAOImpl implements SupplierDAO
 		}
     }
     @Transactional
-    public boolean update(Supplier Supplier){
+    public boolean update(Supplier supplier){
     	
     	try {
-			sessionFactory.getCurrentSession().update(Supplier);
+			sessionFactory.getCurrentSession().update(supplier);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
@@ -47,25 +46,32 @@ public class SupplierDAOImpl implements SupplierDAO
 			return false;
 		}
     }
-    @Transactional
-    public boolean delete(Supplier Supplier){
+  /*  @Transactional
+    public boolean delete(Supplier supplier){
     
             try {
-				sessionFactory.getCurrentSession().delete(Supplier);
+				sessionFactory.getCurrentSession().delete(supplier);
 				return true;
 			} catch (HibernateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return false;
 			}
+    }*/
+    @Transactional
+    public void delete (int id) {
+    	Supplier SupplierToDelete = new Supplier();
+    	SupplierToDelete.setId(id);
+    	sessionFactory.getCurrentSession().delete(SupplierToDelete);
+    	
     }
     @Transactional
-    public Supplier get(String id){
+    public Supplier get(int id){
     	
     	
     	String hql = "from Supplier where id = "+"'"+id+"'";
-    	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-    	List<Supplier> list = ((org.hibernate.Query) query).list();
+    	Query query= sessionFactory.getCurrentSession().createQuery(hql);
+    	List<Supplier> list = query.list();
     	
     	if(list == null)
     	{
@@ -76,11 +82,13 @@ public class SupplierDAOImpl implements SupplierDAO
     		return list.get(0);
     	}
     }
+   
+    
     @Transactional 
     public List<Supplier> list(){
     	String hql = "from Supplier";
-    	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-    	return ((org.hibernate.Query) query).list();
+    	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+    	return query.list();
     	
     }
   

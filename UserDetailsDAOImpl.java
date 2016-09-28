@@ -2,12 +2,14 @@ package com.niit.ShoppingCart.Dao;
 
 import java.util.List;
 
-import javax.management.Query;
+
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.hibernate.hql.internal.QueryExecutionRequestException;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.ShoppingCart.Model.UserDetails;
 
@@ -21,10 +23,10 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
     	this.sessionFactory = sessionFactory;
     	
     }
-
-    public boolean save(UserDetails UserDetails){
+@Transactional
+    public boolean save(UserDetails userDetails){
     	try {
-			sessionFactory.getCurrentSession().save(UserDetails);
+			sessionFactory.getCurrentSession().save(userDetails);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
@@ -32,11 +34,11 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 			return false;
 		}
     }
-    
-    public boolean update(UserDetails UserDetails){
+    @Transactional
+    public boolean update(UserDetails userDetails){
     	
     	try {
-			sessionFactory.getCurrentSession().update(UserDetails);
+			sessionFactory.getCurrentSession().update(userDetails);
 			return true;
 		} catch (HibernateException e) {
 			// TODO Auto-generated catch block
@@ -44,11 +46,11 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 			return false;
 		}
     }
-    
-    public boolean delete(UserDetails UserDetails){
+    @Transactional
+    public boolean delete(UserDetails userDetails){
     
             try {
-				sessionFactory.getCurrentSession().delete(UserDetails);
+				sessionFactory.getCurrentSession().delete(userDetails);
 				return true;
 			} catch (HibernateException e) {
 				// TODO Auto-generated catch block
@@ -56,12 +58,13 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 				return false;
 			}
     }
+    @Transactional
     public UserDetails get(String id){
     	
     	
     	String hql = "from UserDetails where id = "+"'"+id+"'";
-    	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-    	List<UserDetails> list = ((org.hibernate.Query) query).list();
+    	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+    	List<UserDetails> list = query.list();
     	
     	if(list == null)
     	{
@@ -75,8 +78,8 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
     
     public List<UserDetails> list(){
     	String hql = "from UserDetails";
-    	Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
-    	return ((org.hibernate.Query) query).list();
+    	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+    	return query.list();
     	
     }
   
