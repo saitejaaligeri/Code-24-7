@@ -1,4 +1,4 @@
-package com.niit.ShoppingCart;
+package com.niit.ShoppingCart.controller;
 
 import java.io.IOException;
 
@@ -61,6 +61,13 @@ public class HomeController
 		return m1;
 	}
 		
+	@RequestMapping("Contact")
+	public ModelAndView regi1()
+	{
+		ModelAndView m1=new ModelAndView("Contact");
+		return m1;
+	}
+		
 	
 	
 	@RequestMapping("addsupplier")
@@ -93,6 +100,13 @@ public class HomeController
 	public ModelAndView sand()
 	{
 		ModelAndView m1=new ModelAndView("LogoutSuccess");
+		return m1;
+	}
+	
+	@RequestMapping("/UserHome")
+	public ModelAndView san()
+	{
+		ModelAndView m1=new ModelAndView("UserHome");
 		return m1;
 	}
 	

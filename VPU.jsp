@@ -23,27 +23,24 @@
     <div class="navbar-header">
       <a class="navbar-brand" ></a>
     </div>
-    <ul class="nav navbar-nav">
+   <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
     
-    <sec:authorize access="hasRole('ROLE_USER')">
-      <li><a class="navbar-brand" href="UserHome">Home</a></li>
-      </sec:authorize>
-     
-     
-       <sec:authorize access="hasRole('ROLE_ADMIN')">
-      <li><a href="ManageProducts">Manage Products</a></li>
-      </sec:authorize>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-    
-         <sec:authorize access="hasRole('ROLE_ADMIN')">
-      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </sec:authorize>
-      <sec:authorize access="hasRole('ROLE_USER')">
-      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </sec:authorize>
-    </ul>
+       <a class="navbar-brand" href="Home"> Home</a>
+       <ul class="nav navbar-nav navbar-right">   
+       
+       <li><a href="MPU">Products</a></li>
+       
+       </div>
+  
+    <ul class="nav navbar-nav navbar-right">   
+     <li style=padding-left:800><a href="Register"><span class="glyphicon glyphicon-user"></span>Sign up</a></li>
+      <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+   </ul>
   </div>
+</nav>
+ 
 </nav>
       <div class="container">
             <table class="table table-hover table-bordered">

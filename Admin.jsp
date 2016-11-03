@@ -16,6 +16,12 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <title>Welcome Admin</title>
+
+<div class="alert alert-success">
+<br><br><br>
+ <h1> <b> <font size=35> ATHLITIKON! </font></b> <span class="label label-success"> <small> <strong>CUDGEL</strong> your dreamz!!!</small> </span></h1>   
+  </div>
+
 </head>
 <head>
 <style>
@@ -28,7 +34,7 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top"">
   <div class="container-fluid">
   
     <ul class="nav navbar-nav">
@@ -43,7 +49,7 @@
     </ul>
     <ul class="nav navbar-nav navbar-right">
     <li><a href="Admin">Welcome...<%=session.getAttribute("loggedInUser")%></a></li>
-      <li><a href="Home"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>

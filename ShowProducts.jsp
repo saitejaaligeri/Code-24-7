@@ -25,24 +25,16 @@
     </div>
     <ul class="nav navbar-nav">
     
-    <sec:authorize access="hasRole('ROLE_USER')">
-      <li><a class="navbar-brand" href="UserHome">Home</a></li>
-      </sec:authorize>
-     
-     
-       <sec:authorize access="hasRole('ROLE_ADMIN')">
-      <li><a href="ManageProducts">Manage Products</a></li>
-      </sec:authorize>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
     
-         <sec:authorize access="hasRole('ROLE_ADMIN')">
-      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </sec:authorize>
-      <sec:authorize access="hasRole('ROLE_USER')">
-      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-      </sec:authorize>
+      <li><a href="Home">Home</a></li>
+    
+      <li><a href="ManageProductsUnknown">Products</a></li>
+     
+       
     </ul>
+    
+    
+        
   </div>
 </nav>
       <div class="container">

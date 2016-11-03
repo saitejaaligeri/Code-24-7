@@ -1,4 +1,4 @@
-package com.niit.ShoppingCart;
+package com.niit.ShoppingCart.controller;
 
 import java.util.List;
 

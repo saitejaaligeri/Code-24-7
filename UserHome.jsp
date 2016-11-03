@@ -37,21 +37,16 @@
     <div class="navbar-header">
       
     </div>
-    <ul class="nav navbar-nav navbar-left ">
-      
-      <li><a href="Register"><span class="glyphicon glyphicon-user"></span> sign up </a></li>
-      <li><a href="Contact">Contact us</a></li>
-       
-       </ul>
-       
+          
        
         <ul class="nav navbar-nav navbar-right ">
+        <li><a href="ManageProducts">Products</a></li>
+       
+       <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+       
+              
        
       
-       
-              <li><a href="MPU">Products</a></li>
-       
-      <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
       <li><a href=""></a></li>
      </ul>
   </div>
@@ -140,9 +135,5 @@
     </div>
   </div>
 </div>
-	<footer class="container-fluid text-center">
-		<p>©ATHLITIKON!-All Rights Reserved</p>
-		<P>2016</P>
-	</footer>
 </body>
 </html>

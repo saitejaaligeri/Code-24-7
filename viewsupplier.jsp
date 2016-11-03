@@ -25,13 +25,13 @@
 				<a class="navbar-brand" href="Admin">Admin Home</a>
 			</div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="ManageProducts">Manage Products</a></li>
+			
 				
 				<li><a href="ManageSupplier">Manage Suppliers</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="${pageContext.request.contextPath}/Logout"><span>Logout</span></a></li>
+				<li><a href="${pageContext.request.contextPath}/LogoutSuccess"><span>Logout</span></a></li>
 			</ul>
 		</div>
 	</nav>
@@ -40,8 +40,7 @@
             <table class="table table-bordered">
             <thead>
 				<tr>
-					<th>Id</th>
-					<th>Supplier Id</th>
+					
 					<th>Supplier Name</th>
 					<th>Supplier Location</th>
 					<th>Category Id</th>
@@ -51,8 +50,7 @@
 				</tr>
 			</thead>
             <tr>
-            <td>${supplier.id}</td>
-            <td>${supplier.supid}</td>
+          
             <td>${supplier.supname}</td>
             <td>${supplier.suplocation}</td>
             <td>${supplier.categoryid}</td>

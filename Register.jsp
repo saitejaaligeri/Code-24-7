@@ -2,7 +2,7 @@
 <html>
 <head>
 
- <center> <b> <font size= 35 > Register & CUDGEL your dreams!  </font> </b>   </center>
+ <center><br><br><br> <b> <font size= 35 > Register & CUDGEL your dreams!  </font> </b>   </center>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Register Page</title>
@@ -15,13 +15,13 @@
 
 </head>
 <body>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
       
     </div>
     <ul class="nav navbar-nav navbar-left">
-      <li class="active"><a href="Home">Home</a></li>
+      <li><a class="navbar-brand" href="Home">Home</a></li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">

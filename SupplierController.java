@@ -1,4 +1,4 @@
-package com.niit.controller;
+package com.niit.ShoppingCart.controller;
 
 import java.util.List;
 
@@ -79,7 +79,7 @@ public class SupplierController
 	    public ModelAndView updateSupplier(HttpServletRequest request,@Valid @ModelAttribute("Supplier")Supplier editsup,BindingResult result,Model model)
 	    {
 			sd.update(editsup);
-			return new ModelAndView("ManageSuppliers");
+			return new ModelAndView("ManageSupplier");
 	    }	 
 }
 

@@ -24,12 +24,12 @@
       <a class="navbar-brand" href="Admin">Admin Home</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="ManageProducts">Manage Products</a></li>
+     
       <li><a href="ManageSupplier">Manage Suppliers</a></li>
     
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -37,12 +37,9 @@
    <form:form commandName="Supplier" method="post" action="updatesupplier">
        <table class="table table-bordered" >
 
-		   <tr><td><form:label path="id">Supplier Id:</form:label></td>
-               <td><form:input path="id" value="${supplier.id}"/></td>
+		   
+               <form:input path="id" type="hidden" value="${supplier.id}"/>
             </tr>             
-           <tr><td><form:label path="supid">Supplier Id:</form:label></td>
-               <td><form:input path="supid" value="${supplier.supid}"/></td>
-           </tr>
            <tr><td><form:label path="supname">Supplier Name :</form:label></td>
                <td><form:input path="supname" value="${supplier.supname}"/></td>
            </tr>           
@@ -66,7 +63,7 @@
    </form:form> 
    </div>
    	<footer class="container-fluid text-center">
-		<p>©Bibliopole-All Rights Reserved</p>
+		<p>©ATHLITIKON!-All Rights Reserved</p>
 		<P>2016</P>
 	</footer>
    

@@ -24,13 +24,13 @@
       <a class="navbar-brand" href="Admin">Admin Home</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="ManageProducts">Manage Products</a></li>
+     
      
       <li class="active"><a href="ManageSupplier">Manage Suppliers</a></li>
       
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="Logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -38,10 +38,6 @@
     <c:url var="addsupplier" value="addSupplier"></c:url>
    <form:form commandName="Supplier" method="post" action="storesupplier">
        <table class="table table-bordered" >
-           <tr><td><form:label path="supid">Supplier Id:</form:label></td>
-               <td><form:input path="supid"/>
-               <font color="red"><form:errors path="supid"></form:errors></font></td>
-           </tr>
            <tr><td><form:label path="supname">Supplier Name :</form:label></td>
                <td><form:input path="supname"/>
                <font color="red"><form:errors path="supname"></form:errors></font></td>

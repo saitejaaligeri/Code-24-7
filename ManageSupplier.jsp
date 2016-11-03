@@ -26,11 +26,11 @@
 			</div>
 			<ul class="nav navbar-nav">
 				
-				<li class="active"><a href="ManageSupplier">Manage Suppliers</a></li>
+				<li><a href="ManageSupplier">Manage Suppliers</a></li>
 				
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				  <li><a href="Home"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+				  <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -41,14 +41,12 @@
 			<table class="table table-striped table-hover">
 				<tr>
 					<th>Id</th>
-					<th>Supplier Id</th>
 					<th>Supplier Name</th>
 					<th>Supplier Location</th>
 					<th>Action</th>
 				</tr>
 				<tr ng-repeat="z in names | filter:searchBy">
 					<td>{{z.id}}</td>
-					<td>{{z.supid}}</td>
 					<td>{{z.supname}}</td>
 					<td>{{z.suplocation}}</td>
 					<td><a

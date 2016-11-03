@@ -25,17 +25,19 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="ManageProducts">Manage Products</a></li>
-      <li><a href="ManageSupplier">Manage Suppliers</a></li>
+      
      
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="logoutsuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
 <h2>Edit Product</h2>
   <form:form  modelAttribute="Product" method="post" action="update" enctype="multipart/form-data">
    <table class="table table-bordered" >
+   
+               <form:input path="id" type="hidden" value="${product.id}"/>   
       <tr><td><form:label path="Name">Product Name :</form:label></td>
                <td><form:input path="Name" value="${product.name}"/></td>
            </tr>
@@ -67,7 +69,7 @@
                       
   </form:form>   
   	<footer class="container-fluid text-center">
-		<p>©ShoppingCart-All Rights Reserved</p>
+		<p>©ATHLITIKON-All Rights Reserved</p>
 		<P>2016</P>
 	</footer>
   

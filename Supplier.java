@@ -3,9 +3,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -19,43 +19,38 @@ public class Supplier {
 	@Column(name = "Id")
 	private int id;
 	@NotNull
-	private int supid;
-	@NotNull
+	@Size(min=2,max=20,message="Supplier Name must be more than 2 letters")
 	private String supname;
 	@NotNull
+	@Size(min=2,max=20,message="Supplier Location must be more than 2 letters")
 	private String suplocation;
 	@NotNull
 	private int categoryid;
 	@NotNull
+	@Size(min=2,max=20,message="Category Name must be more than 2 letters")
 	private String categoryname;
 	@NotNull
 	private int productid;
 	@NotNull
+	@Size(min=2,max=20,message="Product Name must be than 2 letters")
 	private String productname;
-	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getSuplocation() {
-		return suplocation;
-	}
-	public void setSuplocation(String suplocation) {
-		this.suplocation = suplocation;
-	}
-	public int getSupid() {
-		return supid;
-	}
-	public void setSupid(int supid) {
-		this.supid = supid;
-	}
 	public String getSupname() {
 		return supname;
 	}
 	public void setSupname(String supname) {
 		this.supname = supname;
+	}
+	public String getSuplocation() {
+		return suplocation;
+	}
+	public void setSuplocation(String suplocation) {
+		this.suplocation = suplocation;
 	}
 	public int getCategoryid() {
 		return categoryid;
@@ -81,6 +76,5 @@ public class Supplier {
 	public void setProductname(String productname) {
 		this.productname = productname;
 	}
-	
 	
 }

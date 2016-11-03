@@ -28,3 +28,4 @@ authorities-by-username-query="select u1.username, u1.role from login u1 where u
 	</authentication-provider>
 	</authentication-manager>
 	</beans:beans>
+	

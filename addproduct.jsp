@@ -24,13 +24,13 @@
       <a class="navbar-brand" href="Admin">Admin Home</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="ManageProducts">Manage Products</a></li>
+      <li><a href="ManageProducts">Manage Products</a></li>
       
-      <li><a href="ManageSupplier">Manage Suppliers</a></li>
+     
      
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="logoutsuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="LogoutSuccess"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -66,7 +66,11 @@
            <tr><td><form:label path="capacity">Product Capacity :</form:label></td>
                <td><form:input path="capacity"/>
                <font color="red"><form:errors path="Description"></form:errors></font></td>
-           </tr>           
+           </tr>
+           <tr><td><form:label path="Quantity">Product Quantity :</form:label></td>
+               <td><form:input path="Quantity"/>
+               <font color="red"><form:errors path="Description"></form:errors></font></td>
+           </tr>                      
            <tr><td><form:label path="img">Product Image:</form:label></td>
                <td><form:input path="img" type="file"/>
                <font color="red"><form:errors path="img"></form:errors></font></td>  
@@ -79,11 +83,12 @@
     		</c:forEach>
     		</select></td></tr>
              <td><input type="submit" value="Add product" class="btn-success"/></td>
+              
        </table>
    </form:form> 
    </div>
    	<footer class="container-fluid text-center">
-		<p>©Rass O'bikes</p>
+		<p>©ATHLITIKON!</p>
 		<P>2016</P>
 	</footer>
    

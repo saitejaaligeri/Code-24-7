@@ -1,4 +1,4 @@
-package com.niit.ShoppingCart;
+package com.niit.ShoppingCart.controller;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -40,7 +40,7 @@ public class ProductController {
 	public Product createProduct() {
 		return new Product();
 	}
-@RequestMapping("addproduct")
+@RequestMapping("addproduct")       
 	public ModelAndView display3() {
 
 		ModelAndView mv3 = new ModelAndView("addproduct");
@@ -55,15 +55,33 @@ public ModelAndView display8() {
 	return m4;
 }
 
+@RequestMapping("/VPU")
+public ModelAndView Homey() {
+	ModelAndView m4 = new ModelAndView("VPU");
+	return m4;
+}
+
+@RequestMapping("/MPU")
+public ModelAndView Hoeny() {
+	ModelAndView m4 = new ModelAndView("MPU");
+	return m4;
+}
+
+
 
 @RequestMapping("/viewproductsuser")
 public ModelAndView display10() {
 	ModelAndView m4 = new ModelAndView("viewproductsuser");
 	return m4;
 }
+
 @RequestMapping("storeproduct")
 	public String addproduct(HttpServletRequest request, @Valid @ModelAttribute("Product") Product product,BindingResult result) 
    {
+	if (result.hasErrors())
+	{
+		return "addproduct";
+	}
 		
 		System.out.println(product.getId());
 		System.out.println(product.getName());
@@ -87,7 +105,7 @@ public ModelAndView display10() {
 			System.out.println(e.getMessage());
 		}
 		pd.save(product);
-		return "addproduct";
+		return "ManageProducts";
 
 	}
 @RequestMapping("ManageProducts")
@@ -119,6 +137,7 @@ public ModelAndView display13() {
 	return m6;
 
 }
+
 @ModelAttribute ("Product")
 public ModelAndView display9(){
 ModelAndView m9 = new ModelAndView("Product");
@@ -130,12 +149,19 @@ public ModelAndView viewPro(@RequestParam int id, @ModelAttribute Product produc
 	Product product = pd.get(id);
 	return new ModelAndView("ViewProducts", "product", product);
 }
+
+@RequestMapping(value = "VPU", method = RequestMethod.GET)
+public ModelAndView VPro(@RequestParam int id, @ModelAttribute Product products1) {
+	Product product1 = pd.get(id);
+	return new ModelAndView("VPU", "product", product1);
+}
+
 @RequestMapping(value = "viewproductuser", method = RequestMethod.GET)
 public ModelAndView viewProuser(@RequestParam int id, @ModelAttribute Product products) {
 	Product product = pd.get(id);
 	return new ModelAndView("viewproductuser", "product", product);
 }
- 		 
+
  @RequestMapping("editproduct")
 	public ModelAndView display15() {
 		ModelAndView m6 = new ModelAndView("editproduct");
@@ -145,7 +171,7 @@ public ModelAndView viewProuser(@RequestParam int id, @ModelAttribute Product pr
  @RequestMapping(value="editproduct",method=RequestMethod.GET)
     public ModelAndView editPro(@RequestParam int id){
 	 Product product1=pd.get(id);
-    	return new ModelAndView("editproduct","Product",product1);
+    	return new ModelAndView("editproduct","product",product1);
     }
  @RequestMapping(value="/update",method=RequestMethod.POST)
     public ModelAndView updateProduct(HttpServletRequest request,@Valid @ModelAttribute("Product")Product product,BindingResult result)
@@ -175,13 +201,7 @@ public ModelAndView viewProuser(@RequestParam int id, @ModelAttribute Product pr
  		        
     	pd.update(product);
     	return new ModelAndView("ManageProducts");
-    	}
- 
- @RequestMapping("/ManageProductsUnknown")
- public ModelAndView display33() {
- 	ModelAndView m4 = new ModelAndView("ManageProductsUnknown");
- 	return m4;
- }
+    }
  
  
 }
